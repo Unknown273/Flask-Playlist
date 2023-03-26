@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body>
-    <h1>Welcome to this blog!</h1>
-    <p>Written by {{ author }}</p>
-    {% if weather == sunny %}
-    <p>It's a sunny day</p>
-    {% else %}
-    <p>It's a rainy day</p>
-    {% endif %}
+{% extends "base.html" %}
 
-    {% for post in posts %}
-      <h2>Book Title: {{ post.title }}</h2>
-      <h3>Book Author: {{ post.author }}</h3>
-    {% endfor %}
-  </body>
-</html>
+{% block content %}
+<h1>Welcome to this blog!</h1>
+<p>Written by {{ author }}</p>
+{% if weather == sunny %}
+<p>It's a sunny day</p>
+{% else %}
+<p>It's a rainy day</p>
+{% endif %} {% for post in posts %}
+<h2>Book Title: {{ post.title }}</h2>
+<h3>Book Author: {{ post.author }}</h3>
+{% endfor %}
+{% endblock %}
