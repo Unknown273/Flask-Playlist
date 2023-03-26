@@ -12,7 +12,11 @@ def about():
 
 @app.route("/blog")
 def blog():
-  return render_template('blog.html', author="Yusuf Kazi")
+  posts = [
+    {"title": "Technology in 2019", "author": "Avi"},
+    {"title": "Expansion of Oil in Russia", "author": "Bob"}
+  ]
+  return render_template('blog.html', author="Yusuf Kazi", weather="rainy", posts=posts)
 
 @app.route("/blog/<int:blog_id>")
 def blogpost(blog_id):
