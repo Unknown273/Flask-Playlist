@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def about():
 
 @app.route("/blog")
 def blog():
-  return "This is my blog"
+  return render_template('blog.html', author="Yusuf Kazi")
 
 @app.route("/blog/<int:blog_id>")
 def blogpost(blog_id):
