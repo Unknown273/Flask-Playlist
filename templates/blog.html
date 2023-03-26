@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body>
+{% extends "base.html" %}
+{% block content %}
     <h1>Welcome to this blog!</h1>
     <p>Written by {{ author }}</p>
     {% if weather == sunny %}
@@ -14,5 +12,4 @@
       <h2>Book Title: {{ post.title }}</h2>
       <h3>Book Author: {{ post.author }}</h3>
     {% endfor %}
-  </body>
-</html>
+{% endblock %}
